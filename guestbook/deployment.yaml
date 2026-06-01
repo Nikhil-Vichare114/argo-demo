@@ -17,6 +17,6 @@ spec:
       - name: ghcr-secret
       containers:
       - name: guestbook
-        image: ghcr.io/nikhil-vichare114/guestbook:latest
+        image: ghcr.io/nikhil-vichare114/guestbook:${{ github.sha }}
         ports:
         - containerPort: 80
