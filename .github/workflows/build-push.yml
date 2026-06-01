@@ -44,5 +44,5 @@ jobs:
           context: ./app
           push: true
           tags: |
-            [ghcr.io/${{](https://ghcr.io/${{) github.repository_owner }}/guestbook:latest
-            [ghcr.io/${{](https://ghcr.io/${{) github.repository_owner }}/guestbook:${{ github.sha }}
+            ghcr.io/nikhil-vichare114/guestbook:latest
+            ghcr.io/nikhil-vichare114/guestbook:${{ github.sha }}
