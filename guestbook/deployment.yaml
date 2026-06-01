@@ -13,6 +13,8 @@ spec:
       labels:
         app: guestbook
     spec:
+      imagePullSecrets:
+      - name: ghcr-secret
       containers:
       - name: guestbook
         image: ghcr.io/nikhil-vichare114/guestbook:latest
