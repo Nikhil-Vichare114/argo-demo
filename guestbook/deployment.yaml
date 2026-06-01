@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: guestbook
   namespace: guestbook
+  annotations:
+    [kubernetes.io/change-cause:](https://kubernetes.io/change-cause:) "sha ${{ github.sha }}"
+    org.opencontainers.image.revision: "${{ github.sha }}"
 spec:
   replicas: 1
   selector:
@@ -12,11 +15,11 @@ spec:
     metadata:
       labels:
         app: guestbook
+      annotations:
+        org.opencontainers.image.revision: "${{ github.sha }}"
     spec:
-      imagePullSecrets:
-      - name: ghcr-secret
       containers:
       - name: guestbook
-        image: ghcr.io/nikhil-vichare114/guestbook:${{ github.sha }}
+        image: ghcr.io/nikhil-vichare114/guestbook:latest
         ports:
         - containerPort: 80
