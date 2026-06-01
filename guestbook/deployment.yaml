@@ -4,8 +4,9 @@ metadata:
   name: guestbook
   namespace: guestbook
   annotations:
-    [kubernetes.io/change-cause:](https://kubernetes.io/change-cause:) "sha ${{ github.sha }}"
+    [kubernetes.io/change-cause:](https://kubernetes.io/change-cause:) "v${{ github.run_number }} sha ${{ github.sha }}"
     org.opencontainers.image.revision: "${{ github.sha }}"
+    org.opencontainers.image.version: "v${{ github.run_number }}"
 spec:
   replicas: 1
   selector:
